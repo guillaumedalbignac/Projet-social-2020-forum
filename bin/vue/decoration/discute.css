@@ -1,0 +1,185 @@
+/*
+ *
+https://www.flaticon.com/free-icon/eraser_847452 - Kiranshastry Lineal - https://www.flaticon.com/authors/kiranshastry/lineal
+https://www.flaticon.com/free-icon/paintbrush_129817 - Freepik
+https://www.flaticon.com/free-icon/blank-badge_20100 - Freepik
+Flaticon License - Free for personal and commercial purpose with attribution. 
+*/
+#fenetre
+{
+    -fx-background-color:#fff;
+}
+#options
+{
+    
+}
+#action-options
+{
+    -fx-background-color: transparent;    
+    -fx-text-fill : white;    
+    -fx-font-size:28px;
+    -fx-font-weight:bold;
+}
+#titre
+{
+    -fx-text-fill : white;    
+    -fx-font-size:28px;
+    -fx-font-weight:bold;
+}
+#espace-travail
+{
+    -fx-background-color: #dddddd;//#FBFCFC;
+    -fx-background-radius:2em 2em 2em 2em;
+    -fx-padding:2em;
+}
+#entete
+{
+    -fx-background-color: white;
+    //-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, white, #bbddbb);
+
+}
+#banderolle Label#salon-titre
+{
+    -fx-text-fill : black;    
+    -fx-font-size:28px;
+    -fx-font-weight:bold;
+}
+#banderolle Label
+{
+    -fx-text-fill : black;    
+}
+
+#banderolle #salon-sous-titre
+{
+    -fx-text-fill : #7c7c7c;    
+    -fx-font-size:14px;
+    -fx-font-weight:bold;
+    -fx-font-family:BentonSans, Arial, sans-serif;
+}
+#banderolle #bande-couleur
+{
+    -fx-background-color:#3ff3dd;
+}
+
+#logo
+{
+    -fx-stroke:white;
+    -fx-stroke-width: 5;   
+    -fx-fill: #1e90ff;
+}
+#discussions
+{
+    -fx-background-color: #222222;
+}
+#discussions > Pane
+{
+    -fx-background-color: #272727;
+}
+#discussions > Separator
+{
+    -fx-border-color:#272727; 
+    -fx-border-width:2;
+}
+#salons > .titre, #amis > .titre
+{
+    -fx-text-fill : #3ff3dd;    
+    -fx-font-size:22px;
+    -fx-font-family:BentonSans, Arial, sans-serif;
+    -fx-font-weight:bold;
+}
+#salons Button.action-salon,
+#amis Button.action-ami,
+#options Button.action-ami
+{
+    -fx-background-color:transparent;
+    -fx-text-fill : #dddddd;    
+    -fx-font-size:18px;
+    -fx-font-family:BentonSans, Arial, sans-serif;
+}
+#salons .action-salon.non-lu,
+#amis .action-ami.non-lu,
+#options.action-ami.non-lu
+{
+    -fx-font-weight:bold;    
+    -fx-text-fill : white;    
+}
+#salons .action-salon.action-active
+{
+    -fx-background-color:#3ff3dd;
+    -fx-text-fill:black;
+}
+#menu
+{
+    -fx-background-color: black;
+}
+
+#menu Button
+{
+    -fx-background-color: black;
+    -fx-border-radius: 0px;
+    -fx-border-insets: 0px 0px 0px 0px;
+}
+
+#menu Button:hover{
+    -fx-background-color: #333333;
+    //-fx-border-width: 0px 0px 0px 3px;
+    -fx-border-color: white;
+    -fx-border-style: solid;
+}
+#menu Button:pressed
+{
+    -fx-background-color: #cccccc;   
+}
+
+#tableau
+{
+    -fx-background-color:green;
+    -fx-border-color:white;
+    -fx-border-width:4px;
+}
+
+#espace
+{
+    -fx-background-color:  black;
+}
+#invite
+{
+    -fx-background-color:white;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-insets: -5px;
+    -fx-border-color: white;
+    -fx-border-width: 3px;    
+}
+.annonce
+{
+    -fx-background-color:orange;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-insets: -5px;
+    -fx-border-color: orange;
+    -fx-border-width: 3px;
+}
+#annonce-longue
+{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #b86704, red);
+}
+#annonce-droite
+{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #f6f797, white);
+    -fx-border-color:#f6f797;    
+}
+#annonce-centre
+{
+    -fx-background-color:#79e2f7;
+    -fx-border-color:#79e2f7;
+}
+
+#chat
+{
+    -fx-background-color:#232323;
+    -fx-border-insets: -5px;
+    -fx-border-color:#343434;
+    -fx-border-width:5px;
+}
+
