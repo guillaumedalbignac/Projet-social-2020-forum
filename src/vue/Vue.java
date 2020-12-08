@@ -15,19 +15,19 @@ public class Vue extends Scene{
 	
 	public Vue(String fxml)
 	{
-		super(parser(fxml, null),1350,744);
+		super(parser(fxml, null),1294,743);
 		this.controleur = null;
 	}
 	public Vue(String fxml, Controleur controleur)
 	{
-		super(parser(fxml, controleur),1350,744);
+		super(parser(fxml, controleur),1294,743);
 		this.controleur = controleur;
 	}
 
 	public static Parent parser(String fxml, Controleur controleur)
 	{
 		parseur = new FXMLLoader();
-		parseur.setLocation(VueDiscute.class.getResource(fxml));
+		parseur.setLocation(VueChamps.class.getResource(fxml));
 		if(null != controleur) parseur.setController(controleur);
 		try {
 			return parseur.load();
