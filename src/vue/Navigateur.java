@@ -16,12 +16,12 @@ public abstract class Navigateur extends Application{ // Application de javafx e
 	{
 		instance = this;
 		Logger.setLevel(Logger.INFO);
-		VueChamps.getInstance().activerControles();
-		VueChamp.getInstance().activerControles();
+		VueSalons.getInstance().activerControles();
+		VueSalon.getInstance().activerControles();
 		VueAjouterSemence.getInstance().activerControles();
-		VueAjouterSemence.getInstance().controleur = VueChamp.getInstance().controleur;
-		VueEditerSemence.getInstance().activerControles();
-		VueEditerSemence.getInstance().controleur = VueChamp.getInstance().controleur;
+		VueAjouterSemence.getInstance().controleur = VueSalon.getInstance().controleur;
+		VueProfil.getInstance().activerControles();
+		VueProfil.getInstance().controleur = VueSalon.getInstance().controleur;
 	}
 	
 	public void afficherVue(Vue vue)

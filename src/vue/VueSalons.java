@@ -3,7 +3,7 @@ import java.util.List;
 
 import com.sun.media.jfxmedia.logging.Logger;
 
-import controleur.ControleurChamps;
+import controleur.ControleurSalons;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -12,17 +12,17 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
-public class VueChamps extends Vue {
+public class VueSalons extends Vue {
 
-	protected ControleurChamps controleur;
-	protected static VueChamps instance = null; 
-	public static VueChamps getInstance() {if(null==instance)instance = new VueChamps();return VueChamps.instance;}; 
+	protected ControleurSalons controleur;
+	protected static VueSalons instance = null; 
+	public static VueSalons getInstance() {if(null==instance)instance = new VueSalons();return VueSalons.instance;}; 
 	
-	private VueChamps() 
+	private VueSalons() 
 	{
-		super("champs.fxml"); 
-		super.controleur = this.controleur = new ControleurChamps();
-		Logger.logMsg(Logger.INFO, "new VueChamps()");
+		super("salons.fxml"); 
+		super.controleur = this.controleur = new ControleurSalons();
+		Logger.logMsg(Logger.INFO, "new VueSalons()");
 	}
 		
 	public void activerControles()
@@ -30,10 +30,10 @@ public class VueChamps extends Vue {
 		super.activerControles();
 	}
 	
-	public void afficherChamps(List<modele.Champ> champs)
+	public void afficherChamps(List<modele.Salon> champs)
 	{
 		int position = 1;
-		for(modele.Champ champ : champs)
+		for(modele.Salon champ : champs)
 		{
 			Button libelle = (Button)lookup("#categorie-" + position);
 			System.out.println(champ.getNom());

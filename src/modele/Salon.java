@@ -1,6 +1,6 @@
 package modele;
 
-public class Champ {
+public class Salon {
 	
 	protected int id;
 	protected String nom;

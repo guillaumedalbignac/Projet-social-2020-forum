@@ -1,9 +1,9 @@
 package controleur;
 
-import donnee.ChampDAO;
+import donnee.SalonDAO;
 import vue.Vue;
 import vue.VueAjouterSemence;
-import vue.VueChamps;
+import vue.VueSalons;
 
 //import vue.Navigateur;
 //import vue.*;
@@ -13,9 +13,9 @@ public class Controleur {
 	public static Vue selectionnerVuePrincipale()
 	{
 		//return VueAjouterSemence.getInstance();
-		ChampDAO champDAO = new ChampDAO();
-		VueChamps.getInstance().afficherChamps(champDAO.listerChamps());
-		return VueChamps.getInstance();
+		SalonDAO salonDAO = new SalonDAO();
+		VueSalons.getInstance().afficherChamps(salonDAO.listerSalons());
+		return VueSalons.getInstance();
 	}
 		
 }

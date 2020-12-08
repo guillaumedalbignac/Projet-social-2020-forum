@@ -2,16 +2,16 @@ package vue;
 
 import com.sun.media.jfxmedia.logging.Logger;
 
-import controleur.ControleurChamp;
+import controleur.ControleurSalon;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import modele.Semence;
+import modele.Message;
 
 public class VueAjouterSemence extends Vue{
 
-	protected ControleurChamp controleur;
+	protected ControleurSalon controleur;
 	protected static VueAjouterSemence instance;
 	public static VueAjouterSemence getInstance() {if(null == instance) instance = new VueAjouterSemence(); return instance;};
 	public VueAjouterSemence() {
@@ -30,12 +30,12 @@ public class VueAjouterSemence extends Vue{
 			}});
 	}
 	
-	public Semence lireSemence() {
-		Semence semence = new Semence();
+	public Message lireSemence() {
+		Message semence = new Message();
 		TextField typeSemence = (TextField)lookup("#type-semence");
 		TextField dateSemence = (TextField)lookup("#date-semence");
-		semence.setTypeSemence(typeSemence.getText());
-		semence.setDatePlantation(dateSemence.getText());
+		semence.setTexteDuMessage(typeSemence.getText());
+		semence.setDateMessage(dateSemence.getText());
 		return semence;
 		
 	}

@@ -1,6 +1,20 @@
-# devoir-collections-2020-Delarue-Simon
-devoir-collections-2020-FuZzyy14 created by GitHub Classroom
+# projet-social-2020-slouke
+projet-social-2020-slouke
 
-Collection : Champ (table = champ)
-Item : Semence (table = semence)
+Membres du projet :
 
+d'Albignac Guillaume
+Alexandre Roussel
+Escudero Esteban
+Delarue Simon
+
+
+Sujet du projet : 
+Slouke : Forum avec des salons de discussions généraux et de groupes et messages privés
+
+
+Optimisations choisies :
+-
+-
+-
+-

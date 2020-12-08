@@ -27,7 +27,7 @@ public class Vue extends Scene{
 	public static Parent parser(String fxml, Controleur controleur)
 	{
 		parseur = new FXMLLoader();
-		parseur.setLocation(VueChamps.class.getResource(fxml));
+		parseur.setLocation(VueSalons.class.getResource(fxml));
 		if(null != controleur) parseur.setController(controleur);
 		try {
 			return parseur.load();

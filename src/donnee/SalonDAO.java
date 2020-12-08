@@ -9,44 +9,44 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import modele.Champ;
+import modele.Salon;
 
 
-public class ChampDAO {
+public class SalonDAO {
 
 
-	public List<Champ> listerChamps()
+	public List<Salon> listerSalons()
 	{
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
 		
-		List<Champ> listeChamps =  new ArrayList<Champ>();			
-		Statement requeteListeChamps;
+		List<Salon> listeSalons =  new ArrayList<Salon>();			
+		Statement requeteListeSalons;
 		try {
-			requeteListeChamps = connection.createStatement();
-			ResultSet curseurListeChamps = requeteListeChamps.executeQuery("SELECT * from champ");
-			while(curseurListeChamps.next())
+			requeteListeSalons = connection.createStatement();
+			ResultSet curseurListeSalons = requeteListeSalons.executeQuery("SELECT * from champ");
+			while(curseurListeSalons.next())
 			{
-				int id = curseurListeChamps.getInt("id");
-				String nom = curseurListeChamps.getString("nom");
-				String distanceFerme = curseurListeChamps.getString("distanceferme");
-				Champ champs = new Champ();
-				champs.setId(id);
-				champs.setNom(nom);
-				champs.setDistanceFerme(distanceFerme);
-				listeChamps.add(champs);
+				int id = curseurListeSalons.getInt("id");
+				String nom = curseurListeSalons.getString("nom");
+				String distanceFerme = curseurListeSalons.getString("distanceferme");
+				Salon salon = new Salon();
+				salon.setId(id);
+				salon.setNom(nom);
+				salon.setDistanceFerme(distanceFerme);
+				listeSalons.add(salon);
 			}
 		} catch (SQLException e) {
 				e.printStackTrace();
 		}
 		
-		return listeChamps;
+		return listeSalons;
 	}
 
-	public Champ detaillerChamp(int numero)
+	public Salon detaillerChamp(int numero)
 	{
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
 		
-		Champ champ =  new Champ();			
+		Salon champ =  new Salon();			
 		PreparedStatement requeteChamp;
 			try {
 				requeteChamp = connection.prepareStatement("SELECT * from champ WHERE id = ?");
@@ -69,7 +69,6 @@ public class ChampDAO {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		
 		return champ;
 	}
 	

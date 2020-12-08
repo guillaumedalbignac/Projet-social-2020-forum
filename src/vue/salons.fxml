@@ -155,7 +155,7 @@
                   </AnchorPane>
             <FlowPane id="resume-des-collections" hgap="10.0" layoutX="152.0" layoutY="481.0" prefHeight="130.0" prefWidth="1085.0" styleClass="champ" vgap="10.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="62.0" prefWidth="591.0" style="-fx-background-color: #abb5ff;" text="RÉSUMÉ des CHAMPS" textFill="WHITE" textOverrun="CLIP">
+                  <Label alignment="CENTER" prefHeight="62.0" prefWidth="591.0" style="-fx-background-color: #abb5ff;" text="Statistiques sur les salons" textFill="WHITE" textOverrun="CLIP">
                      <font>
                         <Font name="System Bold" size="44.0" />
                      </font>
@@ -165,7 +165,7 @@
                         <Image url="@decoration/lune-noire.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="66.0" prefWidth="393.0" text="17 champs au total" textFill="WHITE">
+                  <Label prefHeight="66.0" prefWidth="393.0" text="x salons au total" textFill="WHITE">
                      <font>
                         <Font name="Nakula" size="36.0" />
                      </font>
@@ -175,7 +175,7 @@
                         <Image url="@decoration/lune-noire.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="66.0" prefWidth="331.0" text="modifié 2020/08/28" textFill="WHITE">
+                  <Label prefHeight="66.0" prefWidth="459.0" text="dernier message le 02/02/02" textFill="WHITE">
                      <font>
                         <Font name="Nakula" size="36.0" />
                      </font>
@@ -185,7 +185,7 @@
                         <Image url="@decoration/lune-noire.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="66.0" prefWidth="419.0" text="7 semences par collection" textFill="WHITE">
+                  <Label prefHeight="66.0" prefWidth="419.0" text="14 membres" textFill="WHITE">
                      <font>
                         <Font name="Nakula" size="36.0" />
                      </font>
@@ -199,19 +199,19 @@
       </AnchorPane>
       <Pane id="entete" layoutX="-3.0" prefHeight="92.0" prefWidth="1171.0" styleClass="champ" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label layoutX="75.0" layoutY="12.0" prefHeight="69.0" prefWidth="1172.0" style="-fx-text-fill: white;" text="PLANTATIONS 2020" textFill="#fff7f7" textOverrun="CLIP">
+            <Label layoutX="75.0" layoutY="12.0" prefHeight="69.0" prefWidth="1172.0" style="-fx-text-fill: white;" text="Slouke" textFill="#fff7f7" textOverrun="CLIP">
                <font>
                   <Font name="Josefin Sans Thin" size="48.0" />
                </font>
             </Label>
-            <ImageView fitHeight="38.0" fitWidth="33.0" layoutX="18.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="38.0" fitWidth="90.0" layoutX="18.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@decoration/liste.png" />
+                  <Image url="@decoration/logo.png" />
                </image>
             </ImageView>
             <Pane id="sous-titre" layoutX="576.0" layoutY="22.0" prefHeight="85.0" prefWidth="654.0">
                <children>
-                  <Label alignment="CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="86.0" prefWidth="654.0" text="Champs Ferme Alderis" textOverrun="CLIP">
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="86.0" prefWidth="654.0" text="Liste des salons disponibles" textOverrun="CLIP">
                      <font>
                         <Font name="Dyuthi Regular" size="52.0" />
                      </font>
