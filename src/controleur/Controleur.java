@@ -14,7 +14,7 @@ public class Controleur {
 	{
 		//return VueAjouterSemence.getInstance();
 		SalonDAO salonDAO = new SalonDAO();
-		VueSalons.getInstance().afficherChamps(salonDAO.listerSalons());
+		VueSalons.getInstance().afficherSalons(salonDAO.listerSalons());
 		return VueSalons.getInstance();
 	}
 		

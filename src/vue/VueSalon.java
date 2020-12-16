@@ -62,6 +62,7 @@ public class VueSalon extends Vue {
 			}});
 	}
 	
+	
 	public void intialiserSalon(modele.Salon salon)
 	{
 		/*TextArea affichageListeMessages = (TextArea)lookup("#nouveau-message");
@@ -99,7 +100,7 @@ public class VueSalon extends Vue {
 				controleur.notifierClicAfficherProfil(Integer.parseInt(source.getId()));
 				}});
 		
-			Logger.logMsg(Logger.INFO, "Semence : "+ message.getTexteDuMessage());
+			Logger.logMsg(Logger.INFO, "Message : "+ message.getTexteDuMessage());
 			HBox vueSemence = new HBox();
 			vueSemence.getStyleClass().add("semence");
 			vueSemence.getChildren().add(new Label(message.getTexteDuMessage()));

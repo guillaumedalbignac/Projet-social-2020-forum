@@ -18,8 +18,6 @@ public abstract class Navigateur extends Application{ // Application de javafx e
 		Logger.setLevel(Logger.INFO);
 		VueSalons.getInstance().activerControles();
 		VueSalon.getInstance().activerControles();
-		VueAjouterSemence.getInstance().activerControles();
-		VueAjouterSemence.getInstance().controleur = VueSalon.getInstance().controleur;
 		VueProfil.getInstance().activerControles();
 		VueProfil.getInstance().controleur = VueSalon.getInstance().controleur;
 	}

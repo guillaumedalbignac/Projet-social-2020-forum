@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="fenetre" prefHeight="743.0" prefWidth="1294.0" stylesheets="@decoration/champs.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane id="espace" layoutY="92.0" prefHeight="651.0" prefWidth="1294.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="92.0">
+         <children>
+            <VBox id="menu" layoutY="-15.0" prefHeight="666.0" prefWidth="90.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="-15.0">
+               <children>
+                  <Button id="menu-numerique" mnemonicParsing="false" prefHeight="75.0" prefWidth="90.0" />
+                  <Button id="menu-accueil" layoutX="10.0" layoutY="161.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="104.0">
+                     <graphic>
+                        <ImageView fitHeight="52.0" fitWidth="51.0">
+                           <image>
+                              <Image url="@decoration/upload.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="menu-amis" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0">
+                     <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@decoration/download.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="menu-retour" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0">
+                     <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@decoration/close.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+                <AnchorPane layoutX="151.0" layoutY="60.0" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="1085.0" style="-fx-background-color: transparent;">
+                     <children>
+                  <TextArea id="nouveau-message" prefHeight="120.0" prefWidth="533.0" />
+                  <Button id="action-ajouter-message" fx:id="actionAjouterSemence" layoutY="120.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="533.0" text="Ajouter un message" />
+                  <VBox id="liste-messages" fx:id="listesemences" layoutY="161.0" prefHeight="464.0" prefWidth="533.0">
+                     <children>
+                        <HBox id="semence" prefHeight="50.0" prefWidth="570.0" styleClass="semence" stylesheets="@decoration/champs.css" />
+                     </children></VBox>
+                     </children>
+                  </AnchorPane>
+            <FlowPane id="resume-des-collections" hgap="10.0" layoutX="152.0" layoutY="481.0" prefHeight="130.0" prefWidth="1085.0" vgap="10.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </FlowPane>
+            <Text layoutX="151.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Messages du salon" wrappingWidth="225.67578125" />
+         </children>
+      </AnchorPane>
+      <Pane id="entete" layoutX="-3.0" prefHeight="92.0" prefWidth="1171.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="75.0" layoutY="12.0" prefHeight="69.0" prefWidth="1172.0" style="-fx-text-fill: white;" text="Slouke" textFill="#fff7f7" textOverrun="CLIP">
+               <font>
+                  <Font name="Josefin Sans Thin" size="48.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="38.0" fitWidth="33.0" layoutX="18.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@decoration/logo.png" />
+               </image>
+            </ImageView>
+            <Pane id="sous-titre" layoutX="576.0" layoutY="22.0" prefHeight="85.0" prefWidth="654.0">
+               <children>
+                  <Label id="titre-page" alignment="CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="86.0" prefWidth="654.0" text="nomdusalon" textFill="#83170d" textOverrun="CLIP">
+                     <font>
+                        <Font name="Dyuthi Regular" size="52.0" />
+                     </font>
+                  </Label>
+               </children>
+                <effect>
+                    <DropShadow color="#2c2c2c" height="100.0" radius="49.5" width="100.0" />
+                </effect>
+            </Pane>
+
+         </children>
+         <effect>
+            <DropShadow color="#7c7979" height="50.0" radius="24.5" width="50.0" />
+         </effect>
+         
+      </Pane>
+   </children>
+</AnchorPane>

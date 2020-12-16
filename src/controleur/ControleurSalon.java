@@ -28,14 +28,14 @@ public class ControleurSalon extends Controleur{
 	
 	public void actionOuvrirSalon(int numero)
 	{
-		this.salon = salonDAO.detaillerChamp(numero);
+		this.salon = salonDAO.detaillerSalon(numero);
 		VueSalon.getInstance().intialiserSalon(this.salon);
 		this.messages = messageDAO.listerMessages(numero);
 		VueSalon.getInstance().afficherMessages(this.messages);
 		Navigateur.getInstance().afficherVue(VueSalon.getInstance());
 	}
 	
-	public void notifierClicNouveauMessage(String texteMessage)
+	public void notifierClicNouveauMessage(String texteMessage) // ICI INSERER DANS LA BASE
 	{
 		//Navigateur.getInstance().afficherVue(VueAjouterSemence.getInstance());
 		Logger.logMsg(Logger.INFO, "Nouveau message :"+texteMessage+"");

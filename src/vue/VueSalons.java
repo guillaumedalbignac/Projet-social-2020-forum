@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import modele.Salon;
 
 public class VueSalons extends Vue {
 
@@ -30,10 +31,10 @@ public class VueSalons extends Vue {
 		super.activerControles();
 	}
 	
-	public void afficherChamps(List<modele.Salon> champs)
+	public void afficherSalons(List<Salon> champs)
 	{
 		int position = 1;
-		for(modele.Salon champ : champs)
+		for(Salon champ : champs)
 		{
 			Button libelle = (Button)lookup("#categorie-" + position);
 			System.out.println(champ.getNom());

@@ -10,91 +10,95 @@ import java.util.List;
 import modele.Message;
 
 public class MessageDAO {
-	
+
 	public Message detaillerMessage(int id)
 	{
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
-		Message semence = new Message();
-				
-		PreparedStatement requeteSemences;
+		Message message = new Message();
+
+		PreparedStatement requeteMessages;
 		try {
-			requeteSemences = connection.prepareStatement("SELECT * from semences WHERE id = ?");
-			requeteSemences.setInt(1, id);
-			ResultSet curseur = requeteSemences.executeQuery();
+			requeteMessages = connection.prepareStatement("SELECT * from messages WHERE id = ?");
+			requeteMessages.setInt(1, id);
+			ResultSet curseur = requeteMessages.executeQuery();
 			curseur.next();
-			String typeSemence = curseur.getString("typesemence");
-			String datePlantation = curseur.getString("dateplantation");
-			semence.setTexteDuMessage(typeSemence);
-			semence.setDateMessage(datePlantation);
-			semence.setId(id);
-			
-		} 
+			String typeMessage = curseur.getString("typemessage");
+			message.setTexteDuMessage(typeMessage);
+			message.setId(id);
+
+		}
 		catch (SQLException e) {
 				e.printStackTrace();
 		}
-		
-		return semence;
+
+		return message;
 	}
-	
-	
-	
+
+
+
 	public List<Message> listerMessages(int numero)
 	{
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
-		
-		List<Message> listeMessages =  new ArrayList<Message>();			
+
+		List<Message> listeMessages =  new ArrayList<Message>();
 		PreparedStatement requeteMessages;
 		try {
-			requeteMessages = connection.prepareStatement("SELECT * from semences WHERE champ_id = ?");
+			requeteMessages = connection.prepareStatement("SELECT * from messages WHERE id_salon = ?");
 			requeteMessages.setInt(1, numero);
 			ResultSet curseurListeMessages = requeteMessages.executeQuery();
-			
+
 			while(curseurListeMessages.next())
 			{
 				int id = curseurListeMessages.getInt("id");
-				String texteMessage = curseurListeMessages.getString("typesemence");
-				String dateMessage = curseurListeMessages.getString("dateplantation");
+				String texteMessage = curseurListeMessages.getString("message");
+				String dateMessage = curseurListeMessages.getString("heure");
+				String pseudo = curseurListeMessages.getString("pseudo");
 				Message message = new Message();
 				message.setId(id);
+				message.setPseudo(pseudo);
 				message.setTexteDuMessage(texteMessage);
 				message.setDateMessage(dateMessage);
+				message.setSalonId(numero);
 				listeMessages.add(message);
 			}
 		} catch (SQLException e) {
 				e.printStackTrace();
 		}
-		
+
 		return listeMessages;
 	}
-	
+
 	public void ajouterMessage(Message message)
 	{
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
 		try {
-			PreparedStatement requeteAjouterMessage = connection.prepareStatement("Insert into semences(typesemence,dateplantation) VALUES(?,?)");
-			requeteAjouterMessage.setString(1, message.getTexteDuMessage());
+			PreparedStatement requeteAjouterMessage = connection.prepareStatement("Insert into messages(id,message,pseudo,heure,id_salon) VALUES(?,?,?,?,?)");
+			requeteAjouterMessage.setInt(1, message.getId());
+			requeteAjouterMessage.setString(2, message.getTexteDuMessage());
+			requeteAjouterMessage.setString(3, message.getPseudo());
 			requeteAjouterMessage.setString(2, message.getDateMessage());
+			requeteAjouterMessage.setInt(5, message.getSalonId());
 			requeteAjouterMessage.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
-	public void editerSemence(Message semence) 
+	/*public void editerMessage(Message message)
 	{
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
 		try {
-			PreparedStatement requeteModifierSemence = connection.prepareStatement("UPDATE semences SET typesemence = ?, dateplantation = ? WHERE id = ?");
-			requeteModifierSemence.setString(1, semence.getTexteDuMessage());
-			requeteModifierSemence.setString(2, semence.getDateMessage());
-			requeteModifierSemence.setInt(3,semence.getId());
-			requeteModifierSemence.execute();
+			PreparedStatement requeteModifierMessage = connection.prepareStatement("UPDATE messages SET message = ?, pseudo = ?, heure = ? WHERE id = ?");
+			requeteModifierMessage.setString(1, message.getTexteDuMessage());
+			requeteModifierMessage.setString(2, message.getDateMessage());
+			requeteModifierMessage.setInt(3,message.getId());
+			requeteModifierMessage.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
-	}
-	
+
+
+	}*/
+
 }

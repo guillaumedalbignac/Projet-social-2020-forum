@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class BaseDeDonnees {
 	private Connection connection = null;
-	
+
 	private BaseDeDonnees()
 	{
 		try {
@@ -15,12 +15,14 @@ public class BaseDeDonnees {
 			e.printStackTrace();
 		}
 		try {
-			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "password");
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:20820/slouke", "postgres", "nostenfer7");
+			//connection = DriverManager.getConnection("jdbc:postgresql://149.56.45.139:5432", "postgres", "password");
+			//connection = DriverManager.getConnection("jdbc:postgresql://devoircapture.ddns.net", "postgres", "password");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// SINGLETON - DEBUT
 	private static BaseDeDonnees instance = null;
 	public static BaseDeDonnees getInstance()
@@ -34,5 +36,5 @@ public class BaseDeDonnees {
 	{
 		return this.connection;
 	}
-	
+
 }
