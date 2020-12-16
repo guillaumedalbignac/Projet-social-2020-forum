@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import modele.Salon;
 import modele.Utilisateur;
 
 public class UtilisateurDAO {
@@ -14,18 +16,21 @@ public class UtilisateurDAO {
 	public Utilisateur detaillerUtilisateur(String email)
 	{
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
-				
+		Utilisateur utilisateur = new Utilisateur();	
 		PreparedStatement requeteUtilisateur;
 		try {
 			requeteUtilisateur = connection.prepareStatement("SELECT * FROM utilisateur WHERE email = ?");
-			requeteSemences.setString(1, email);
+			requeteUtilisateur.setString(1, email);
 			ResultSet curseur = requeteUtilisateur.executeQuery();
 			curseur.next();
 			String pseudo = curseur.getString("pseudo");
 			String bio = curseur.getString("bio");
 			int age = curseur.getInt("age");
-
-			Utilisateur utilisateur = new Utilisateur(email, pseudo, bio, age);	
+			utilisateur.setAge(age);
+			utilisateur.setBio(bio);
+			utilisateur.setEmail(email);
+			utilisateur.setPseudo(pseudo);
+			
 		} 
 		catch (SQLException e) {
 				e.printStackTrace();
@@ -40,7 +45,7 @@ public class UtilisateurDAO {
 	{
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
 		
-		List<Utilisateur> listeUtilisateurs =  new ArrayList<Message>();			
+		List<Utilisateur> listeUtilisateurs =  new ArrayList<Utilisateur>();			
 		PreparedStatement requeteUtilisateurs;
 		try {
 			requeteUtilisateurs = connection.prepareStatement("SELECT * FROM utilisateur");
@@ -71,7 +76,7 @@ public class UtilisateurDAO {
 			requeteAjouterUtilisateur.setString(2, utilisateur.getPseudo());
 			requeteAjouterUtilisateur.setString(3, utilisateur.getBio());
 			requeteAjouterUtilisateur.setInt(4, utilisateur.getAge());
-			requeteAjouterMessage.execute();
+			requeteAjouterUtilisateur.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

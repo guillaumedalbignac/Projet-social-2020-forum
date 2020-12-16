@@ -7,11 +7,15 @@ public class Utilisateur {
 	protected String bio;
 	protected int age;
 
-	public Utlisateur(String email, String pseudo, String bio, int age) {
+	public Utilisateur(String email, String pseudo, String bio, int age) {
 		this.email = email;
 		this.pseudo = pseudo;
 		this.bio = bio;
 		this.age = age;
+	}
+
+	public Utilisateur() {
+		
 	}
 
 	public String getEmail() {
