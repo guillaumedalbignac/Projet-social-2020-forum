@@ -11,6 +11,7 @@ import modele.Message;
 import vue.Navigateur;
 import vue.VueAjouterSemence;
 import vue.VueSalon;
+import vue.VueSalons;
 import vue.VueProfil;
 
 public class ControleurSalon extends Controleur{
@@ -77,6 +78,11 @@ public class ControleurSalon extends Controleur{
 		Navigateur.getInstance().afficherVue(VueSalon.getInstance());
 		
 		
+	}
+	
+	public void retourAuMenu()
+	{
+		Navigateur.getInstance().afficherVue(VueSalons.getInstance());
 	}
 	
 	

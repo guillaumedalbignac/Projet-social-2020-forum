@@ -52,6 +52,14 @@ public class VueSalon extends Vue {
 			TextArea boiteNouveauMessage = (TextArea)lookup("#nouveau-message");
 			controleur.notifierClicNouveauMessage(boiteNouveauMessage.getText());
 			}});
+		Button actionRetour = (Button)lookup("#menu-retour");
+		
+		actionRetour.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent e) {
+			controleur.retourAuMenu();
+			}});
 	}
 	
 	public void intialiserSalon(modele.Salon salon)
