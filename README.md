@@ -14,7 +14,7 @@ Slouke : Forum avec des salons de discussions généraux et de groupes et messag
 Aide pour répartition des tâches : https://docs.google.com/spreadsheets/d/1nf6gZ_KN0PMWzuC49mw0JtMIQafQ-v0uaL_kzXE5Yeg/edit#gid=0
 
 Optimisations choisies :
-- Écran de statistiques fait par Alexandre
-- Journal postgresql fait par Guillaume
+- Reset des messages tout les jours à minuit fait par Simon
+- Journal postgresql + compter les messages tout les jours fait par Guillaume
 - Cache Redis faite par Esteban
-- DAO Lazy loading fait par Simon
+- DAO Lazy loading fait par Alexandre
