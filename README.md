@@ -8,6 +8,7 @@ Alexandre Roussel
 Escudero Esteban
 Delarue Simon
 
+Rapport de projet : https://docs.google.com/presentation/d/1A2GAmvMxvOdN0wWcAVwjELqsR7wJqDkIndjeBo7ZLEk/edit?usp=sharing
 
 Sujet du projet : 
 Slouke : Forum avec des salons de discussions généraux et de groupes et messages privés
