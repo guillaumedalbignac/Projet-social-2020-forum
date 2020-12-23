@@ -1,0 +1,109 @@
+/*
+ *
+https://commons.wikimedia.org/wiki/File:Corner_Ornament_Black_Down_Right.svg
+*/
+#fenetre
+{
+    -fx-background-color:#fff;
+}
+#espace-travail
+{
+    -fx-background-color: #dddddd;//#FBFCFC;
+    -fx-background-radius:2em 2em 2em 2em;
+    -fx-padding:2em;
+}
+#entete
+{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6376ff, #c4cbff);
+
+}
+#entete Label
+{
+    -fx-text-fill : #333333;    
+}
+#entete #sous-titre
+{
+    -fx-border-color:black;
+    -fx-background-color:white;
+}
+#entete #sous-titre Label
+{
+    -fx-text-fill : black;
+}
+
+#menu
+{
+    -fx-background-color: #aaa;
+}
+
+#menu Button
+{
+    -fx-background-color: #aaa;
+    -fx-border-radius: 0px;
+    -fx-border-insets: 0px 0px 0px 0px;
+    -fx-cursor:hand;
+}
+
+#menu Button:hover{
+    -fx-background-color: #333333;
+    //-fx-border-width: 0px 0px 0px 3px;
+    -fx-border-color: white;
+    -fx-border-style: solid;
+}
+#menu Button:pressed
+{
+    -fx-background-color: #cccccc;   
+}
+
+#espace
+{
+    -fx-background-color:  grey;
+}
+#resume-des-champs
+{
+    //-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #f6f797, white); cool degrade jaune
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, white, #fcd2dd);
+    -fx-border-color:#f6f797;    
+}
+.semence
+{
+    -fx-background-color : lightgrey;
+    -fx-min-height : 25px;
+    -fx-min-width : 533px;
+    -fx-background-radius : 30px;
+    -fx-padding:2em;
+    -fx-alignment: center;
+    
+    //-fx-spacing:200.0;
+    
+}
+#semence .Button
+{
+    -fx-alignment: center-right;
+    
+}
+Pane.champ
+{
+    -fx-background-radius: 20px;
+    -fx-background-color:#b6f0ee;//#eea3b7;
+    //-fx-border-color:#fcd2dd;//#eea3b7;
+    -fx-margin: 15px;
+    -fx-min-width:200;
+}
+
+ScrollPane,
+ScrollPane > .viewport
+{
+    -fx-background-color:transparent;
+}
+
+ScrollPane > .viewport
+{
+    -fx-padding: 5 5 5 5;
+}
+
+AnchorPane FlowPane Pane Button
+{
+    -fx-background-color:transparent;    
+}
+
