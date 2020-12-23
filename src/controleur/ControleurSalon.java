@@ -45,7 +45,7 @@ public class ControleurSalon extends Controleur{
 	
 	public void notifierClicNouveauMessage(String texteMessage) // ICI INSERER DANS LA BASE
 	{
-		//Navigateur.getInstance().afficherVue(VueAjouterSemence.getInstance());
+
 		String Pseudo = "Esteban";
 		DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 	    Date date = new Date();
@@ -79,18 +79,6 @@ public class ControleurSalon extends Controleur{
 		
 		Logger.logMsg(Logger.INFO, "\nINFO : "+message.getPseudo() +" ("+ message.getId() +") : " +message.getTexteDuMessage() + " " + message.getDateMessage()+"-"+message.getSalonId());
 	}
-	
-	
-	/*public void notifierClicEnregisterAjoutSemence() {
-		
-		Message message = VueAjouterSemence.getInstance().lireSemence();
-		message.setSalonId(salon.getId());
-		MessageDAO messageDAO = new MessageDAO();
-		messageDAO.ajouterMessage(message);
-		this.messages.add(message);
-		VueSalon.getInstance().afficherMessages(messages); // TODO : optimiser
-		Navigateur.getInstance().afficherVue(VueSalon.getInstance());
-	}*/
 	
 	protected Message message;
 	
