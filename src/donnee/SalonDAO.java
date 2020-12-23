@@ -12,53 +12,47 @@ import java.util.List;
 import modele.Salon;
 
 public class SalonDAO {
+	
+	protected List<Salon> listeSalons;
+	
+	public SalonDAO() {
+		initialiserListeSalons();
+	}
+	
+	private void initialiserListeSalons() {
+		Connection connection = BaseDeDonnees.getInstance().getConnection();
+
+	    listeSalons =  new ArrayList<Salon>();
+			Statement requeteListeSalons;
+			try {
+				requeteListeSalons = connection.createStatement();
+				ResultSet curseurListeSalons = requeteListeSalons.executeQuery("SELECT * from salon");
+				while(curseurListeSalons.next())
+				{
+					int id = curseurListeSalons.getInt("id");
+					String nom = curseurListeSalons.getString("nom");
+					Salon salon = new Salon();
+					salon.setId(id);
+					salon.setNom(nom);
+					listeSalons.add(salon);
+				}
+			} catch (SQLException e) {
+					e.printStackTrace();
+			}
+	}
 
   public List<Salon> listerSalons(){
-    Connection connection = BaseDeDonnees.getInstance().getConnection();
-
-    List<Salon> listeSalons =  new ArrayList<Salon>();
-		Statement requeteListeSalons;
-		try {
-			requeteListeSalons = connection.createStatement();
-			ResultSet curseurListeSalons = requeteListeSalons.executeQuery("SELECT * from salon");
-			while(curseurListeSalons.next())
-			{
-				int id = curseurListeSalons.getInt("id");
-				String nom = curseurListeSalons.getString("nom");
-				Salon salon = new Salon();
-				salon.setId(id);
-				salon.setNom(nom);
-				listeSalons.add(salon);
-			}
-		} catch (SQLException e) {
-				e.printStackTrace();
-		}
-
 		return listeSalons;
 	}
 
 	public Salon detaillerSalon(int numero)
 	{
-		Connection connection = BaseDeDonnees.getInstance().getConnection();
-
-    Salon salon =  new Salon();
-		PreparedStatement requeteSalon;
-			try {
-				requeteSalon = connection.prepareStatement("SELECT * from salon WHERE id = ?");
-				requeteSalon.setInt(1, numero);
-
-				ResultSet curseurSalon = requeteSalon.executeQuery();
-				curseurSalon.next();
-				int id = curseurSalon.getInt("id");
-				String nom = curseurSalon.getString("nom");
-
-				salon.setId(id);
-				salon.setNom(nom);
-
-			} catch (SQLException e) {
-				e.printStackTrace();
+		Salon bonSalon = new Salon();
+		for (Salon salon: listeSalons) {
+			if (salon.getId() == numero) {
+				bonSalon = salon;
 			}
-
-		return salon;
+		}
+		return bonSalon;
 	}
 }

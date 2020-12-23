@@ -13,30 +13,44 @@ import modele.Utilisateur;
 
 public class UtilisateurDAO {
 	
-	public Utilisateur detaillerUtilisateur(String email)
-	{
+	List<Utilisateur> listeUtilisateurs;
+	
+	public UtilisateurDAO() {
+		initialiserListeUtilisateurs();
+	}
+	
+	private void initialiserListeUtilisateurs() {
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
-		Utilisateur utilisateur = new Utilisateur();	
-		PreparedStatement requeteUtilisateur;
+		
+		listeUtilisateurs =  new ArrayList<Utilisateur>();			
+		PreparedStatement requeteUtilisateurs;
 		try {
-			requeteUtilisateur = connection.prepareStatement("SELECT * FROM utilisateur WHERE email = ?");
-			requeteUtilisateur.setString(1, email);
-			ResultSet curseur = requeteUtilisateur.executeQuery();
-			curseur.next();
-			String pseudo = curseur.getString("pseudo");
-			String bio = curseur.getString("bio");
-			int age = curseur.getInt("age");
-			utilisateur.setAge(age);
-			utilisateur.setBio(bio);
-			utilisateur.setEmail(email);
-			utilisateur.setPseudo(pseudo);
+			requeteUtilisateurs = connection.prepareStatement("SELECT * FROM utilisateur");
+			ResultSet curseurListeUtilisateurs = requeteUtilisateurs.executeQuery();
 			
-		} 
-		catch (SQLException e) {
+			while(curseurListeUtilisateurs.next())
+			{
+				String email = curseurListeUtilisateurs.getString("email");
+				String pseudo = curseurListeUtilisateurs.getString("pseudo");
+				String bio = curseurListeUtilisateurs.getString("bio");
+				int age = curseurListeUtilisateurs.getInt("age");
+
+				listeUtilisateurs.add(new Utilisateur(email, pseudo, bio, age));
+			}
+		} catch (SQLException e) {
 				e.printStackTrace();
 		}
-		
-		return utilisateur;
+	}
+	
+	public Utilisateur detaillerUtilisateur(String email)
+	{
+		Utilisateur bonUtilisateur = new Utilisateur();
+		for (Utilisateur utilisateur: listeUtilisateurs) {
+			if (utilisateur.getEmail().equals(email)) {
+				bonUtilisateur = utilisateur;
+			}
+		}
+		return bonUtilisateur;
 	}
 	
 	

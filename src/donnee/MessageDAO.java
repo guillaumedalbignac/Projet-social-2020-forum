@@ -16,46 +16,26 @@ import com.sun.media.jfxmedia.logging.Logger;
 import modele.Message;
 
 public class MessageDAO {
-
-	public Message detaillerMessage(int id)
-	{
-		Connection connection = BaseDeDonnees.getInstance().getConnection();
-		Message message = new Message();
-
-		PreparedStatement requeteMessages;
-		try {
-			requeteMessages = connection.prepareStatement("SELECT * from messages WHERE id = ?");
-			requeteMessages.setInt(1, id);
-			ResultSet curseur = requeteMessages.executeQuery();
-			curseur.next();
-			String typeMessage = curseur.getString("typemessage");
-			message.setTexteDuMessage(typeMessage);
-			message.setId(id);
-
-		}
-		catch (SQLException e) {
-				e.printStackTrace();
-		}
-
-		return message;
+	
+	List<Message> listeMessages;
+	
+	public MessageDAO() {
+		initialiserListeMessages();
 	}
-
-
-
-	public List<Message> listerMessages(int numero)
-	{
+	
+	private void initialiserListeMessages() {
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
 		
-		List<Message> listeMessages =  new ArrayList<Message>();
+		listeMessages =  new ArrayList<Message>();
 		PreparedStatement requeteMessages;
 		try {
-			requeteMessages = connection.prepareStatement("SELECT * from messages WHERE id_salon = ?");
-			requeteMessages.setInt(1, numero);
+			requeteMessages = connection.prepareStatement("SELECT * from messages");
 			ResultSet curseurListeMessages = requeteMessages.executeQuery();
 
 			while(curseurListeMessages.next())
 			{
 				int id = curseurListeMessages.getInt("id");
+				int salonId = curseurListeMessages.getInt("id_salon");
 				String texteMessage = curseurListeMessages.getString("message");
 				String dateMessage = curseurListeMessages.getString("heure");
 				String pseudo = curseurListeMessages.getString("pseudo");
@@ -64,14 +44,38 @@ public class MessageDAO {
 				message.setPseudo(pseudo);
 				message.setTexteDuMessage(texteMessage);
 				message.setDateMessage(dateMessage);
-				message.setSalonId(numero);
+				message.setSalonId(salonId);
 				listeMessages.add(message);
 			}
 		} catch (SQLException e) {
 				e.printStackTrace();
 		}
+	}
 
-		return listeMessages;
+	public Message detaillerMessage(int id)
+	{
+		Message bonMessage = new Message();
+		for (Message message: listeMessages) {
+			if (message.getId() == id) {
+				bonMessage = message;
+			}
+		}
+		return bonMessage;
+	}
+
+
+
+	public List<Message> listerMessages(int numero)
+	{
+		List<Message> listeMessagesSalon = new ArrayList<>();
+		
+		for (Message message: listeMessages) {
+			if (message.getSalonId() == numero) {
+				listeMessagesSalon.add(message);
+			}
+		}
+		
+		return listeMessagesSalon;
 	}
 
 	public void ajouterMessage(Message message)
