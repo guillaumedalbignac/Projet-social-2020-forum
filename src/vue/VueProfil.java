@@ -2,57 +2,72 @@ package vue;
 
 import com.sun.media.jfxmedia.logging.Logger;
 
-import controleur.ControleurSalon;
+import controleur.ControleurProfil;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import modele.Message;
+import modele.Utilisateur;
+import donnee.UtilisateurDAO;
 
 public class VueProfil extends Vue{
-	protected int id = 0;
-	protected ControleurSalon controleur;
+	protected UtilisateurDAO utilisateurDAO;
+	protected Utilisateur utilisateur;
 	protected static VueProfil instance;
-	public static VueProfil getInstance() {if(null == instance) instance = new VueProfil(); return instance;};
-	public VueProfil() {
+	public static VueProfil getInstance() {if(null == instance) instance = new VueProfil("simon.delarue2@gmail.com"); return instance;};
+	protected ControleurProfil controleur = null;
+	public ControleurProfil getControleur() {
+		return this.controleur;
+	}
+	
+	protected TextField caseEmail;
+	protected TextField casePseudo;
+	protected TextField caseBio;
+	protected TextField caseAge;
+	
+	public VueProfil(String email) {
 		super("profil.fxml");
+		Logger.logMsg(Logger.INFO, "new VueProfil()");
+		super.controleur = this.controleur = new ControleurProfil();
+		utilisateurDAO = new UtilisateurDAO();
+		utilisateur = utilisateurDAO.detaillerUtilisateur(email);
+		caseEmail = (TextField)lookup("#email");
+		casePseudo = (TextField)lookup("#pseudo");
+		caseBio = (TextField)lookup("#biographie");
+		caseAge = (TextField)lookup("#age");
+		afficherProfil(utilisateur);
 	}
 	
-	public Message lireMessage() {
-		Message semence = new Message();
-		TextField caseTypeSemence = (TextField)lookup("#pseudo");
-		TextField caseDateSemence = (TextField)lookup("#profil-description");
-		semence.setTexteDuMessage(caseTypeSemence.getText());
-		semence.setDateMessage(caseDateSemence.getText());
-		return semence;
-		
-	}
-	
-	public void afficherSemence(Message semence) 
+	public void afficherProfil(Utilisateur utilisateur) 
 	{
-		this.id = semence.getSalonId();
-		TextField caseTypeSemence = (TextField)lookup("#pseudo");
-		TextField caseDateSemence = (TextField)lookup("#profil-description");
-		caseTypeSemence.setText(semence.getTexteDuMessage());
-		caseDateSemence.setText(semence.getDateMessage());
-		
-		
+		caseEmail.setText(utilisateur.getEmail());
+		casePseudo.setText(utilisateur.getPseudo());
+		caseBio.setText(utilisateur.getBio());
+		caseAge.setText(utilisateur.getAge()+"");
 	}
+	
 	public void activerControles()
 	{
 		super.activerControles();
 		
-		Button actionEnregistrer = (Button)lookup("#action-retour");
+		Button actionRetour = (Button)lookup("#action-retour");
+		actionRetour.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent e) {
+				controleur.retourAuMenu();
+			}});
+		Button actionEnregistrer = (Button)lookup("#action-enregistrer");
 		actionEnregistrer.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent e) {
-			controleur.notifierClicRetour();
+				utilisateur.setPseudo(casePseudo.getText());
+				utilisateur.setBio(caseBio.getText());
+				utilisateur.setAge(Integer.parseInt(caseAge.getText()));
+				utilisateurDAO.editerUtilisateur(utilisateur);
 			}});
 	}
-	
-	
-	
 	
 }
 
