@@ -66,23 +66,29 @@
                         <Font size="31.0" />
                      </font>
                   </Text>
-                  <GridPane prefHeight="86.0" prefWidth="447.0" vgap="20.0">
+                  <GridPane prefHeight="200.0" prefWidth="447.0" vgap="20.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="114.0" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="333.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="31.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="31.0" minHeight="0.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="92.60001220703126" minHeight="10.0" prefHeight="48.80001220703125" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="75.19999999999999" minHeight="0.0" prefHeight="69.59998779296873" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="54.599999999999994" minHeight="0.0" prefHeight="37.000024414062494" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="54.599999999999994" minHeight="10.0" prefHeight="37.000024414062494" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="Pseudonyme" />
-                        <Label text="Description" GridPane.rowIndex="1" />
+                        <Label text="Biographie" GridPane.rowIndex="1" />
+                        <Label text="Adresse email" GridPane.rowIndex="2" />
+                        <Label text="Age" GridPane.rowIndex="3" />
                         <TextField id="pseudo" fx:id="typeSemence" GridPane.columnIndex="1" />
-                        <TextField id="profil-description" fx:id="dateSemence" prefHeight="25.0" prefWidth="395.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField id="biographie" fx:id="dateSemence" alignment="TOP_LEFT" prefHeight="50.0" prefWidth="500.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField id="pseudo" fx:id="typeSemence1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField id="pseudo" fx:id="typeSemence11" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
+                  <Button id="action-enregistrer" fx:id="actionEnregistrerSemence1" mnemonicParsing="false" prefHeight="41.0" prefWidth="556.0" text="Enregistrer" />
                   <Button id="action-retour" fx:id="actionEnregistrerSemence" mnemonicParsing="false" prefHeight="41.0" prefWidth="556.0" text="Retour">
                      <VBox.margin>
                         <Insets />

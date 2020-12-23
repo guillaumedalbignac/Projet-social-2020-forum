@@ -35,7 +35,7 @@ public class Message {
 	public void setDateMessage(String dateMessage) {
 		this.dateMessage = dateMessage;
 	}
-
+	
 	public int getSalonId() {
 		return salon_id;
 	}

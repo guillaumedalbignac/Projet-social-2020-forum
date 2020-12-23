@@ -26,7 +26,7 @@ public class VueAjouterSemence extends Vue{
 
 			@Override
 			public void handle(ActionEvent e) {
-			controleur.notifierClicEnregisterAjoutSemence();
+			//controleur.notifierClicEnregisterAjoutSemence();
 			}});
 	}
 	

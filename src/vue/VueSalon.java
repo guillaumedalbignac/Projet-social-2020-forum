@@ -6,17 +6,12 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import controleur.ControleurSalon;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import modele.Message;
 
@@ -80,7 +75,7 @@ public class VueSalon extends Vue {
 	public void afficherMessages(List<Message> listeMessages)
 	{
 		
-		Logger.logMsg(Logger.INFO, "VueChamp.afficherMessages()");
+		Logger.logMsg(Logger.INFO, "VueSalon.afficherMessages()");
 		/*ListView affichageListeSemences = (ListView)lookup("#liste-semences"); ancien code pour afficher dans un ListView
 		ArrayList<String> listeNomSemences= new ArrayList<String>(); */
 		VBox vueSemences = (VBox)lookup("#liste-messages");
@@ -100,7 +95,7 @@ public class VueSalon extends Vue {
 				controleur.notifierClicAfficherProfil(Integer.parseInt(source.getId()));
 				}});
 		
-			Logger.logMsg(Logger.INFO, "Message : "+ message.getTexteDuMessage());
+			Logger.logMsg(Logger.INFO, message.getPseudo() +" : "+ message.getTexteDuMessage() + "		" +message.getDateMessage());
 			HBox vueSemence = new HBox();
 			vueSemence.getStyleClass().add("semence");
 			vueSemence.getChildren().add(new Label(message.getTexteDuMessage()));
