@@ -49,7 +49,7 @@ public class VueProfil extends Vue{
 	public void activerControles()
 	{
 		super.activerControles();
-		
+	
 		Button actionRetour = (Button)lookup("#action-retour");
 		actionRetour.setOnAction(new EventHandler<ActionEvent>() {
 

@@ -2,7 +2,6 @@ package controleur;
 
 import donnee.SalonDAO;
 import vue.Vue;
-import vue.VueAjouterSemence;
 import vue.VueSalons;
 
 //import vue.Navigateur;

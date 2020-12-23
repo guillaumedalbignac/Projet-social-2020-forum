@@ -87,7 +87,7 @@ public class ControleurSalon extends Controleur{
 		MessageDAO messagesDAO = new MessageDAO();
 		this.message = messagesDAO.detaillerMessage(id);
 		Logger.logMsg(Logger.INFO, "ControleurSalon.notifierClicEditionMessage("+id+")");
-		VueProfil.getInstance().afficherSemence(message);
+		//VueProfil.getInstance().afficherSemence(message);
 		Navigateur.getInstance().afficherVue(VueProfil.getInstance());
 		
 	}
