@@ -16,10 +16,16 @@ public class BaseDeDonnees {
 			e.printStackTrace();
 		}
 		try {
+
+			//connection = DriverManager.getConnection("jdbc:postgresql://localhost:20820/slouke", "postgres", "nostenfer7");
+			connection = DriverManager.getConnection("jdbc:postgresql://149.56.45.139:5432/slouke", "esteban", "motdepasse");
+			//connection = DriverManager.getConnection("jdbc:postgresql://devoircapture.ddns.net", "postgres", "password");
+
 			//connection = DriverManager.getConnection("jdbc:postgresql://localhost:20820/slouke","postgres","");
 			String url1 = "jdbc:postgresql://149.56.45.139:5432/slouke";
 			
 			connection = DriverManager.getConnection(url1, "esteban", "motdepasse");
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

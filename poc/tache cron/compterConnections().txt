@@ -1,0 +1,16 @@
+Procédure pour faire une tache automatisé dans cron :
+
+	1) Créer un script bash (.sh) dans le dossier /etc/cron.daily (monthly si on souhaite tous les mois, etc...)
+
+	2) Dans ce script bash, on met les lignes suivantes : 
+		#!/bin/bash
+		sudo -u postgres -H -- psql -d slouke -c "SELECT compterConnections()"
+
+	3) Quitter le script et faire la commande :
+		crontab -e
+		
+	4) Placer à la toute fin du fichier la commande: 
+		0 20 * * * /etc/cron.daily/procedures.sh
+
+	5) Enregistrer pui fermer crontab ! Le script s'executera dans ce cas présent tous les jours à 20h
+
