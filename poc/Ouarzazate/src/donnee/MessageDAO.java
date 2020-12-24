@@ -16,7 +16,7 @@ import java.util.Set;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import modele.Message;
-import redis.clients.jedis.Jedis;
+//import redis.clients.jedis.Jedis;
 
 public class MessageDAO {
 

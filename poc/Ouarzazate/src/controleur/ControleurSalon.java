@@ -31,7 +31,7 @@ public class ControleurSalon extends Controleur{
 	
 	public ControleurSalon()
 	{
-		Logger.logMsg(Logger.INFO, "new ControleurChamp()");
+		Logger.logMsg(Logger.INFO, "new ControleurSalon()");
 	}
 	
 	public void actionOuvrirSalon(int numero)

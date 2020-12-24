@@ -31,15 +31,15 @@ public class VueSalons extends Vue {
 		super.activerControles();
 	}
 	
-	public void afficherSalons(List<Salon> champs)
+	public void afficherSalons(List<Salon> salons)
 	{
 		int position = 1;
-		for(Salon champ : champs)
+		for(Salon salon : salons)
 		{
 			Button libelle = (Button)lookup("#categorie-" + position);
-			System.out.println(champ.getNom());
-			libelle.setText(champ.getNom());
-			libelle.setId(champ.getId()+""); // l'id est changé mais on n'a plus besoin de recuperer l'objet
+			//System.out.println(champ.getNom());
+			libelle.setText(salon.getNom());
+			libelle.setId(salon.getId()+""); // l'id est changé mais on n'a plus besoin de recuperer l'objet
 			
 			libelle.setOnAction(new EventHandler<ActionEvent>() 
 			{
@@ -47,7 +47,7 @@ public class VueSalons extends Vue {
 	            {
 	            	Logger.logMsg(Logger.INFO, "Bouton active");
 	            	Button bouton = (Button)e.getSource();
-	            	controleur.actionOuvrirChamp(Integer.parseInt(bouton.getId()));
+	            	controleur.actionOuvrirSalon(Integer.parseInt(bouton.getId()));
 	            }
 	        });
 

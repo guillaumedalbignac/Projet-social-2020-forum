@@ -4,8 +4,23 @@ public class Salon {
 
 	protected int id;
 	protected String nom;
-	protected int taille;
-
+/*
+	public Salon(String xml, int mode)
+	{
+		
+	}
+	public String exporterXML()
+	{
+		return "";
+	}
+	public String exporterJSON()
+	{
+		return "";
+	}
+	public String serialiser()
+	{
+		return "";
+	}*/
 	public int getId() {
 		return id;
 	}

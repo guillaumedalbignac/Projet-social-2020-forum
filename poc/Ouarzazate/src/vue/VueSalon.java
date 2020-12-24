@@ -68,7 +68,7 @@ public class VueSalon extends Vue {
 		affichageListeMessages.setText(messages);*/
 
 		Label affichageTitre = (Label)lookup("#titre-page");
-		affichageTitre.setText("Salon " + salon.getNom());
+		affichageTitre.setText(salon.getNom());
 		
 		
 	}

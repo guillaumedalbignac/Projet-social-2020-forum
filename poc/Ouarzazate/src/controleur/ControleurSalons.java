@@ -6,6 +6,7 @@ import donnee.SalonDAO;
 import donnee.MessageDAO;
 import vue.Navigateur;
 import vue.VueSalon;
+import vue.VueSalons;
 
 public class ControleurSalons extends Controleur{
 
@@ -15,9 +16,9 @@ public class ControleurSalons extends Controleur{
 	}
 	
 	// RECEPTION des EVENEMENTS
-	public void actionOuvrirChamp(int numero)
+	public void actionOuvrirSalon(int numero)
 	{
-		SalonDAO champDAO = new SalonDAO();
+		SalonDAO salonDAO = new SalonDAO();
 		VueSalon.getInstance().getControleur().actionOuvrirSalon(numero);
 	}
 
