@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="fenetre" prefHeight="743.0" prefWidth="1294.0" stylesheets="@decoration/champs.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="fenetre" prefHeight="743.0" prefWidth="1294.0" stylesheets="@decoration/champs.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane id="espace" layoutY="92.0" prefHeight="651.0" prefWidth="1294.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="92.0">
          <children>
@@ -84,8 +84,8 @@
                         <Label text="Age" GridPane.rowIndex="3" />
                         <TextField id="pseudo" fx:id="typeSemence" GridPane.columnIndex="1" />
                         <TextField id="biographie" fx:id="dateSemence" alignment="TOP_LEFT" prefHeight="50.0" prefWidth="500.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField id="pseudo" fx:id="typeSemence1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField id="pseudo" fx:id="typeSemence11" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField id="email" fx:id="typeSemence1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField id="age" fx:id="typeSemence11" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                   <Button id="action-enregistrer" fx:id="actionEnregistrerSemence1" mnemonicParsing="false" prefHeight="41.0" prefWidth="556.0" text="Enregistrer" />
