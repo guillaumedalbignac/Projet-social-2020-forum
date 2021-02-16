@@ -143,7 +143,7 @@ ALTER TABLE public.salon OWNER TO postgres;
 
 CREATE TABLE public.utilisateur (
     id integer NOT NULL,
-    "pseudo " text,
+    pseudo text,
     age integer,
     bio text,
     email text
@@ -195,10 +195,10 @@ INSERT INTO public.salon (id, nom) VALUES (3, 'Salon VIP');
 -- Data for Name: utilisateur; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.utilisateur (id, "pseudo ", age, bio, email) VALUES (1, 'NLG_', 20, 'Fatman en puissance', 'gdalbi14@gmail.com');
-INSERT INTO public.utilisateur (id, "pseudo ", age, bio, email) VALUES (2, 'Arceusyo_Luffy
+INSERT INTO public.utilisateur (id, pseudo, age, bio, email) VALUES (1, 'NLG_', 20, 'Fatman en puissance', 'gdalbi14@gmail.com');
+INSERT INTO public.utilisateur (id, pseudo, age, bio, email) VALUES (2, 'Arceusyo_Luffy
 ', 20, 'N''importe quoi', 'random@free.fr');
-INSERT INTO public.utilisateur (id, "pseudo ", age, bio, email) VALUES (3, 'Fuzzy', 20, 'Aime manger des sausscisses et de la crême', 'simon.delarue2@gmail.com');
+INSERT INTO public.utilisateur (id, pseudo, age, bio, email) VALUES (3, 'Fuzzy', 20, 'Aime manger des sausscisses et de la crême', 'simon.delarue2@gmail.com');
 
 
 --
