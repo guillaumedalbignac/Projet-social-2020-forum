@@ -40,10 +40,10 @@ public class VueProfil extends Vue{
 	
 	public void afficherProfil(Utilisateur utilisateur) 
 	{
-		caseEmail.setText(utilisateur.getEmail());
+		//caseEmail.setText(utilisateur.getEmail());
 		casePseudo.setText(utilisateur.getPseudo());
 		caseBio.setText(utilisateur.getBio());
-		caseAge.setText(utilisateur.getAge()+"");
+		//caseAge.setText(utilisateur.getAge()+"");
 	}
 	
 	public void activerControles()
