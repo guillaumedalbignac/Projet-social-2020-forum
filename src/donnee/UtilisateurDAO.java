@@ -25,15 +25,16 @@ public class UtilisateurDAO {
 		listeUtilisateurs =  new ArrayList<Utilisateur>();			
 		PreparedStatement requeteUtilisateurs;
 		try {
-			requeteUtilisateurs = connection.prepareStatement("SELECT * FROM utilisateur");
+			requeteUtilisateurs = connection.prepareStatement("SELECT * FROM utilisateur"); 
 			ResultSet curseurListeUtilisateurs = requeteUtilisateurs.executeQuery();
+			System.out.println("Query : " + curseurListeUtilisateurs);
 			
 			while(curseurListeUtilisateurs.next())
-			{
-				String email = curseurListeUtilisateurs.getString("email");
+			{				
 				String pseudo = curseurListeUtilisateurs.getString("pseudo");
+				int age = curseurListeUtilisateurs.getInt("age");							
 				String bio = curseurListeUtilisateurs.getString("bio");
-				int age = curseurListeUtilisateurs.getInt("age");
+				String email = curseurListeUtilisateurs.getString("email");	
 
 				listeUtilisateurs.add(new Utilisateur(email, pseudo, bio, age));
 			}
