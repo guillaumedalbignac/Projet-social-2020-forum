@@ -62,14 +62,13 @@ https://commons.wikimedia.org/wiki/File:Corner_Ornament_Black_Down_Right.svg
 #resume-des-champs
 {
     -fx-background-color: blue;
-        
+    -fx-border-color:#f6f797;    
 }
 .semence
 {
     -fx-background-color : grey;
     -fx-min-height : 25px;
     -fx-min-width : 533px;
-    -fx-background-radius : 30px;
     -fx-padding:2em;
     -fx-alignment: center;
     
