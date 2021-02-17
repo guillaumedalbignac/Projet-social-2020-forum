@@ -14,17 +14,17 @@ https://commons.wikimedia.org/wiki/File:Corner_Ornament_Black_Down_Right.svg
 }
 #entete
 {
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6376ff, #c4cbff);
+    -fx-background-color: blue;
 
 }
 #entete Label
 {
-    -fx-text-fill : #333333;    
+    -fx-text-fill : blue;    
 }
 #entete #sous-titre
 {
     -fx-border-color:black;
-    -fx-background-color:white;
+    -fx-background-color: lightblue;
 }
 #entete #sous-titre Label
 {
@@ -33,41 +33,40 @@ https://commons.wikimedia.org/wiki/File:Corner_Ornament_Black_Down_Right.svg
 
 #menu
 {
-    -fx-background-color: #aaa;
+    -fx-background-color: blue;
 }
 
 #menu Button
 {
-    -fx-background-color: #aaa;
+    -fx-background-color: blue;
     -fx-border-radius: 0px;
     -fx-border-insets: 0px 0px 0px 0px;
     -fx-cursor:hand;
 }
 
 #menu Button:hover{
-    -fx-background-color: #333333;
+    -fx-background-color: white;
     //-fx-border-width: 0px 0px 0px 3px;
     -fx-border-color: white;
     -fx-border-style: solid;
 }
 #menu Button:pressed
 {
-    -fx-background-color: #cccccc;   
+    -fx-background-color: lightblue;   
 }
 
 #espace
 {
-    -fx-background-color:  grey;
+    -fx-background-color: lightblue;
 }
 #resume-des-champs
 {
-    //-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #f6f797, white); cool degrade jaune
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, white, #fcd2dd);
-    -fx-border-color:#f6f797;    
+    -fx-background-color: blue;
+        
 }
 .semence
 {
-    -fx-background-color : lightgrey;
+    -fx-background-color : grey;
     -fx-min-height : 25px;
     -fx-min-width : 533px;
     -fx-background-radius : 30px;
@@ -85,8 +84,8 @@ https://commons.wikimedia.org/wiki/File:Corner_Ornament_Black_Down_Right.svg
 Pane.champ
 {
     -fx-background-radius: 20px;
-    -fx-background-color:#b6f0ee;//#eea3b7;
-    //-fx-border-color:#fcd2dd;//#eea3b7;
+    -fx-background-color: white;
+    //-fx-border-color: white;
     -fx-margin: 15px;
     -fx-min-width:200;
 }
