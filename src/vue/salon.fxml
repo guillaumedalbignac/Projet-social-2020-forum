@@ -9,7 +9,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -53,7 +52,7 @@
             </VBox>
                 <AnchorPane layoutX="151.0" layoutY="60.0" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="1085.0" style="-fx-background-color: transparent;">
                      <children>
-                  <VBox id="liste-messages" fx:id="listesemences" layoutY="161.0" prefHeight="464.0" prefWidth="533.0" />
+                  <VBox id="liste-messages" fx:id="listesemences" layoutX="74.0" layoutY="10.0" prefHeight="332.0" prefWidth="942.0" />
                   <FlowPane id="resume-des-collections" hgap="10.0" layoutX="68.0" layoutY="345.0" prefHeight="164.0" prefWidth="953.0" vgap="10.0">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -63,7 +62,6 @@
                         <Button id="action-ajouter-message" fx:id="actionAjouterSemence" mnemonicParsing="false" prefHeight="41.0" prefWidth="942.0" text="Envoyer" />
                      </children>
                   </FlowPane>
-                  <HBox id="semence" layoutX="68.0" prefHeight="47.0" prefWidth="942.0" styleClass="semence" stylesheets="@decoration/champs.css" />
                      </children>
                   </AnchorPane>
             <Text layoutX="151.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Messages du salon" wrappingWidth="225.67578125">

@@ -52,7 +52,7 @@
             </VBox>
                 <AnchorPane layoutX="151.0" layoutY="60.0" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="1085.0" style="-fx-background-color: transparent;">
                      <children>
-                  <VBox id="liste-messages" fx:id="listesemences" layoutX="68.0" prefHeight="343.0" prefWidth="953.0" />
+                  <VBox id="liste-messages" fx:id="listesemences" layoutX="74.0" layoutY="10.0" prefHeight="332.0" prefWidth="942.0" />
                   <FlowPane id="resume-des-collections" hgap="10.0" layoutX="68.0" layoutY="345.0" prefHeight="164.0" prefWidth="953.0" vgap="10.0">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -64,9 +64,9 @@
                   </FlowPane>
                      </children>
                   </AnchorPane>
-            <Text layoutX="130.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Messages du salon" wrappingWidth="225.67578125">
+            <Text layoutX="151.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Messages du salon" wrappingWidth="225.67578125">
                <font>
-                  <Font name="Footlight MT Light" size="24.0" />
+                  <Font name="Footlight MT Light" size="18.0" />
                </font></Text>
          </children>
       </AnchorPane>
@@ -74,7 +74,7 @@
          <children>
             <Label layoutX="75.0" layoutY="12.0" prefHeight="69.0" prefWidth="1172.0" style="-fx-text-fill: white;" text="Slouke" textFill="#fff7f7" textOverrun="CLIP">
                <font>
-                  <Font name="Footlight MT Light" size="48.0" />
+                  <Font name="Josefin Sans Thin" size="48.0" />
                </font>
             </Label>
             <ImageView fitHeight="38.0" fitWidth="33.0" layoutX="18.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">

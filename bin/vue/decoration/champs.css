@@ -24,6 +24,7 @@ https://commons.wikimedia.org/wiki/File:Corner_Ornament_Black_Down_Right.svg
 #entete #sous-titre
 {
     -fx-border-color:black;
+
     -fx-background-color: lightblue;
 }
 #entete #sous-titre Label
@@ -66,7 +67,7 @@ https://commons.wikimedia.org/wiki/File:Corner_Ornament_Black_Down_Right.svg
 }
 .semence
 {
-    -fx-background-color : grey;
+    -fx-background-color : lightgrey;
     -fx-min-height : 25px;
     -fx-min-width : 533px;
     -fx-padding:2em;
