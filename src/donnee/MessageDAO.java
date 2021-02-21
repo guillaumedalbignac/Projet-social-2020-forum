@@ -81,38 +81,34 @@ public class MessageDAO {
 	}
 
 	public void ajouterMessage(Message message)
-	{
-		Connection connection = BaseDeDonnees.getInstance().getConnection();
-		Statement statement = null;
-		
-		//Preparation de la cache
+	{	
+		//Utilisation de la cache
 		Jedis cache = new Jedis("localhost");
 		
 		String idSalon = String.valueOf(message.getSalonId());
 		String idMessage = String.valueOf(message.getId());
 		String contenuMessage = message.getTexteDuMessage();
 		
-		cache.set(idSalon + "/" + idMessage + "/messages", contenuMessage);
-		String recupCache = cache.get(idSalon + "/" + idMessage + "/messages");
-		System.out.println("Mesage par la cache : "+ recupCache);
 		
-		cache.set("timestamp", Calendar.getInstance().getTimeInMillis() + "");	
-	}
-
-	/*public void editerMessage(Message message)
-	{
+		cache.set(idSalon + "/" + idMessage + "/messages", contenuMessage);
+		cache.set("timestamp", Calendar.getInstance().getTimeInMillis() + "");  
+		
+		//Sauvegarde du message dans la BDD
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
+		PreparedStatement requeteMessages;
+		
 		try {
-			PreparedStatement requeteModifierMessage = connection.prepareStatement("UPDATE messages SET message = ?, pseudo = ?, heure = ? WHERE id = ?");
-			requeteModifierMessage.setString(1, message.getTexteDuMessage());
-			requeteModifierMessage.setString(2, message.getDateMessage());
-			requeteModifierMessage.setInt(3,message.getId());
-			requeteModifierMessage.execute();
-		} catch (SQLException e) {
+			requeteMessages = connection.prepareStatement("INSERT INTO messages(id,message,pseudo,id_salon) VALUES(?,?,?,?)");
+			requeteMessages.setInt(1, message.getId());
+			requeteMessages.setString(2, contenuMessage);
+			requeteMessages.setString(3, "TestCacheRedis");
+			requeteMessages.setInt(4, Integer.parseInt(idSalon));
+			
+			requeteMessages.executeUpdate();
+			//System.out.println("Query sql: " + requeteMessages);
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-
-
-	}*/
-
+	}
+	
 }
