@@ -25,7 +25,7 @@ public class UtilisateurDAO {
 		listeUtilisateurs =  new ArrayList<Utilisateur>();			
 		PreparedStatement requeteUtilisateurs;
 		try {
-			requeteUtilisateurs = connection.prepareStatement("SELECT * FROM utilisateur"); 
+			requeteUtilisateurs = connection.prepareStatement("SELECT id,pseudo,age,bio,email FROM utilisateur"); 
 			ResultSet curseurListeUtilisateurs = requeteUtilisateurs.executeQuery();
 			System.out.println("Query : " + curseurListeUtilisateurs);
 			
@@ -63,7 +63,7 @@ public class UtilisateurDAO {
 		List<Utilisateur> listeUtilisateurs =  new ArrayList<Utilisateur>();			
 		PreparedStatement requeteUtilisateurs;
 		try {
-			requeteUtilisateurs = connection.prepareStatement("SELECT * FROM utilisateur");
+			requeteUtilisateurs = connection.prepareStatement("SELECT id,pseudo,age,bio,email FROM utilisateur");
 			ResultSet curseurListeUtilisateurs = requeteUtilisateurs.executeQuery();
 			
 			while(curseurListeUtilisateurs.next())

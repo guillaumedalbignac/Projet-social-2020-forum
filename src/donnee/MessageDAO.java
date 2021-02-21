@@ -31,7 +31,7 @@ public class MessageDAO {
 		listeMessages =  new ArrayList<Message>();
 		PreparedStatement requeteMessages;
 		try {
-			requeteMessages = connection.prepareStatement("SELECT * from messages");
+			requeteMessages = connection.prepareStatement("SELECT id,message,pseudo,heure,id_salon from messages");
 			ResultSet curseurListeMessages = requeteMessages.executeQuery();
 
 			while(curseurListeMessages.next())

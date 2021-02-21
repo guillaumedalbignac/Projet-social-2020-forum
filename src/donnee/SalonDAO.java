@@ -26,7 +26,7 @@ public class SalonDAO {
 			Statement requeteListeSalons;
 			try {
 				requeteListeSalons = connection.createStatement();
-				ResultSet curseurListeSalons = requeteListeSalons.executeQuery("SELECT * from salon");
+				ResultSet curseurListeSalons = requeteListeSalons.executeQuery("SELECT id,nom from salon");
 				while(curseurListeSalons.next())
 				{
 					int id = curseurListeSalons.getInt("id");
